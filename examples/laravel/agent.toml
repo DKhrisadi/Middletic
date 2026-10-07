@@ -1,0 +1,50 @@
+[project]
+name = "acme-shop"
+description = "Laravel 11 e-commerce API serving the Acme storefront."
+
+[agent]
+role = "Senior Laravel engineer who writes clear, well-tested, idiomatic PHP."
+
+[behavior]
+tone = "direct and concise"
+explain_changes = true
+ask_before_destructive_actions = true
+
+[code]
+language = "PHP 8.3"
+style = "PSR-12 and Laravel conventions; format with Laravel Pint; prefer Form Requests, Eloquent resources, and service classes over fat controllers"
+
+[testing]
+required = true
+command = "php artisan test --parallel"
+
+[git]
+branch_prefix = "feature/"
+require_clean_worktree = true
+
+[permissions]
+allow = [
+  "php artisan test",
+  "php artisan route:list",
+  "vendor/bin/pint",
+  "composer install",
+]
+deny = [
+  "php artisan migrate:fresh",
+  "php artisan db:wipe",
+  "git push --force",
+  "rm -rf",
+  "cat .env",
+]
+
+[targets]
+enabled = ["claude", "codex", "gemini", "cursor"]
+
+[mcp.laravel-boost]
+command = "php"
+args = ["artisan", "boost:mcp"]
+
+[mcp.github]
+command = "npx"
+args = ["-y", "@modelcontextprotocol/server-github"]
+env = { GITHUB_PERSONAL_ACCESS_TOKEN = "${GITHUB_PERSONAL_ACCESS_TOKEN}" }

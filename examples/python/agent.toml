@@ -1,0 +1,50 @@
+[project]
+name = "ledgerlite"
+description = "FastAPI service that reconciles bank transactions against invoices."
+
+[agent]
+role = "Senior Python engineer who values small, typed, well-tested changes."
+
+[behavior]
+tone = "concise"
+explain_changes = true
+ask_before_destructive_actions = true
+
+[code]
+language = "Python 3.12"
+style = "PEP 8 enforced by ruff; full type hints checked with mypy --strict; prefer dataclasses and pydantic models over plain dicts"
+
+[testing]
+required = true
+command = "uv run pytest -q"
+
+[git]
+branch_prefix = "feat/"
+require_clean_worktree = false
+
+[permissions]
+allow = [
+  "uv run pytest",
+  "uv run ruff check",
+  "uv run mypy",
+  "uv sync",
+]
+deny = [
+  "git push --force",
+  "rm -rf",
+  "alembic downgrade base",
+  "cat .env",
+]
+
+[targets]
+enabled = ["claude", "codex", "gemini", "cursor"]
+
+[mcp.github]
+command = "npx"
+args = ["-y", "@modelcontextprotocol/server-github"]
+env = { GITHUB_PERSONAL_ACCESS_TOKEN = "${GITHUB_PERSONAL_ACCESS_TOKEN}" }
+
+[mcp.postgres]
+command = "uvx"
+args = ["postgres-mcp", "--access-mode=restricted"]
+env = { DATABASE_URI = "${DATABASE_URI}" }

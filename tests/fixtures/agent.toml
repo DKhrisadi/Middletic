@@ -1,0 +1,35 @@
+[project]
+name = "demo"
+description = "A demo project."
+
+[agent]
+role = "Senior Python engineer"
+
+[behavior]
+tone = "concise"
+explain_changes = true
+ask_before_destructive_actions = true
+
+[code]
+style = "PEP 8, full typing"
+language = "Python"
+
+[testing]
+required = true
+command = "pytest -q"
+
+[git]
+branch_prefix = "feat/"
+require_clean_worktree = true
+
+[permissions]
+allow = ["read files"]
+deny = ["rm -rf", "git push --force"]
+
+[targets]
+enabled = ["claude", "codex", "gemini", "cursor"]
+
+[mcp.github]
+command = "npx"
+args = ["-y", "@modelcontextprotocol/server-github"]
+env = { GITHUB_TOKEN = "secret-value" }

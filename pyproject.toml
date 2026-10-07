@@ -1,0 +1,70 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "middletic"
+version = "0.1.0"
+description = "One configuration for every AI coding agent."
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "MIT" }
+authors = [{ name = "DKhrisadi" }]
+keywords = ["ai", "coding-agent", "claude", "codex", "gemini", "cursor", "config", "cli"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Environment :: Console",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Software Development",
+    "Topic :: Software Development :: Code Generators",
+    "Topic :: Utilities",
+    "Typing :: Typed",
+]
+dependencies = [
+    "typer>=0.12",
+    "rich>=13",
+    "pydantic>=2.0",
+    "tomli-w>=1.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0",
+    "ruff>=0.5",
+    "mypy>=1.10",
+]
+
+[project.urls]
+Homepage = "https://github.com/DKhrisadi/Middletic"
+Repository = "https://github.com/DKhrisadi/Middletic"
+Issues = "https://github.com/DKhrisadi/Middletic/issues"
+Changelog = "https://github.com/DKhrisadi/Middletic/releases"
+
+[project.scripts]
+agent = "middletic.cli.main:app"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/middletic"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+src = ["src", "tests"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "SIM"]
+
+[tool.mypy]
+strict = true
+python_version = "3.11"
+plugins = ["pydantic.mypy"]
+files = ["src", "tests"]

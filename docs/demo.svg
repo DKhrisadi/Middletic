@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="520" height="446" viewBox="0 0 520 446" role="img" aria-label="agent sync terminal demo">
+  <style>
+    text { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 14px; }
+    .l { opacity: 0; animation: show 0.01s forwards; }
+    @keyframes show { to { opacity: 1; } }
+  </style>
+  <rect width="520" height="446" rx="10" fill="#0d1117"/>
+  <rect width="520" height="32" rx="10" fill="#161b22"/>
+  <rect y="22" width="520" height="10" fill="#161b22"/>
+  <circle cx="20" cy="16" r="6" fill="#ff5f56"/>
+  <circle cx="40" cy="16" r="6" fill="#ffbd2e"/>
+  <circle cx="60" cy="16" r="6" fill="#27c93f"/>
+  <text x="260" y="21" fill="#8b949e" text-anchor="middle" style="font-size:12px">agent sync</text>
+  <text x="24" y="52" fill="#58a6ff" class="l" style="animation-delay:0.00s" xml:space="preserve">$ agent init ...</text>
+  <text x="24" y="74" fill="#c9d1d9" class="l" style="animation-delay:0.35s" xml:space="preserve">Created agent.toml. Run `agent sync` next.</text>
+  <text x="24" y="118" fill="#58a6ff" class="l" style="animation-delay:1.05s" xml:space="preserve">$ agent sync</text>
+  <text x="24" y="140" fill="#c9d1d9" class="l" style="animation-delay:1.40s" xml:space="preserve">CLAUDE.md: <tspan fill="#3fb950">created</tspan></text>
+  <text x="24" y="162" fill="#c9d1d9" class="l" style="animation-delay:1.75s" xml:space="preserve">AGENTS.md: <tspan fill="#3fb950">created</tspan></text>
+  <text x="24" y="184" fill="#c9d1d9" class="l" style="animation-delay:2.10s" xml:space="preserve">GEMINI.md: <tspan fill="#3fb950">created</tspan></text>
+  <text x="24" y="206" fill="#c9d1d9" class="l" style="animation-delay:2.45s" xml:space="preserve">.cursor/rules/agent.mdc: <tspan fill="#3fb950">created</tspan></text>
+  <text x="24" y="250" fill="#58a6ff" class="l" style="animation-delay:3.15s" xml:space="preserve">$ agent status</text>
+  <text x="24" y="272" fill="#c9d1d9" class="l" style="animation-delay:3.50s" xml:space="preserve">Status: <tspan fill="#3fb950">SYNCED</tspan></text>
+  <text x="24" y="294" fill="#c9d1d9" class="l" style="animation-delay:3.85s" xml:space="preserve">Last sync: 2026-10-07T03:19:50+00:00</text>
+  <text x="24" y="316" fill="#c9d1d9" class="l" style="animation-delay:4.20s" xml:space="preserve">Config modified since last sync: no</text>
+  <text x="24" y="338" fill="#c9d1d9" class="l" style="animation-delay:4.55s" xml:space="preserve">  CLAUDE.md: <tspan fill="#3fb950">SYNCED</tspan> - <tspan fill="#3fb950">up to date</tspan></text>
+  <text x="24" y="360" fill="#c9d1d9" class="l" style="animation-delay:4.90s" xml:space="preserve">  AGENTS.md: <tspan fill="#3fb950">SYNCED</tspan> - <tspan fill="#3fb950">up to date</tspan></text>
+  <text x="24" y="382" fill="#c9d1d9" class="l" style="animation-delay:5.25s" xml:space="preserve">  GEMINI.md: <tspan fill="#3fb950">SYNCED</tspan> - <tspan fill="#3fb950">up to date</tspan></text>
+  <text x="24" y="404" fill="#c9d1d9" class="l" style="animation-delay:5.60s" xml:space="preserve">  .cursor/rules/agent.mdc: <tspan fill="#3fb950">SYNCED</tspan> - <tspan fill="#3fb950">up to date</tspan></text>
+</svg>
